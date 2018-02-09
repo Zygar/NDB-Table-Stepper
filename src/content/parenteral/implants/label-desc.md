@@ -1,1 +1,0 @@
-Implants must be administered by a medical professional. If the pharmacy is involved in dispensing them to a named client, the words ‘to be administered by a medical professional’ are added to the label. 

@@ -1,1 +1,0 @@
-Remind clients not to swallow these medicines (you can also reassure them that a small amount will not cause harm). Mouthwashes and gargles are often used after meals and/or before bedtime so that the client will not be actively swallowing.

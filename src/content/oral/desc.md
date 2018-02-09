@@ -1,1 +1,0 @@
-Oral dose forms are taken by mouth, and are absorbed through the mucosal lining of the gastrointestinal tract. 

@@ -1,1 +1,0 @@
-Clients should be advised on how to store their medicines. Offer tools to measure the appropriate dose. They may require a syringe, measuring cup, or spoon. If the medicine requires a child-resistant closure, make sure any client with dexterity issues (such as older adults or clients with arthritis) is able to open the cap.

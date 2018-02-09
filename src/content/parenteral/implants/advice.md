@@ -1,1 +1,0 @@
-Normally clients will take the dispensed medicine straight from the pharmacy to the medical professional for administration. However, if the medicine is taken home, advise the client to store it out of reach of children and in appropriate conditions such as a cool and dry place.

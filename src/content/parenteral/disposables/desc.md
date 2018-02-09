@@ -1,1 +1,0 @@
-Empty disposable syringes may be used to draw up injections from vials and ampoules. Filter needles are used with glass ampoules. Disposable syringes are normally single use only. The needle is attached to the syringe, and the whole thing must be safely discarded after use. Disposable syringes come with different gauge needles (sizes).

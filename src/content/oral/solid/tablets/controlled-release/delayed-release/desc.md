@@ -1,1 +1,0 @@
-Delayed release  tablets  are made by making the tablets from granules that have been given a wax or fibre coating of a carefully controlled thickness. The coatings are designed to dissolve after a certain time.

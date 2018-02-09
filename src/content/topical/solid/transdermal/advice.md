@@ -1,1 +1,0 @@
-The patches should be applied to non-hairy skin. Sites should be rotated so that the replacement patch is not applied to the same area of skin, and hands should be washed well after the application. People should be warned to dispose of used patches carefully, as they may still contain some medicine.

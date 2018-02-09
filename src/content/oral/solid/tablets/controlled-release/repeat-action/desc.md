@@ -1,1 +1,0 @@
-Repeat action tablets give an initial dose followed by one or more doses at certain intervals. They are made by making a tablet with an inner core or several inner cores that have been given a wax or fibre coating of carefully controlled thickness. The coatings are designed to dissolve after a certain time.

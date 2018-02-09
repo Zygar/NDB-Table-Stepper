@@ -1,1 +1,0 @@
-Clients should be informed that the tablet will dissolve on the tongue within seconds. These tablets should be protected from moisture and prolonged exposure to light. Clients may also require specific instruction on how to remove the tablet from the blister pack (for example, pull the foil back from where the seal is lifted).

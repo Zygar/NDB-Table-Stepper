@@ -1,1 +1,0 @@
-Uncoated tablets don't have to be administered in any particular way. These tablets may be halved with a tablet cutter if the client has difficulting swallowing them. Talk through any relevant CALs or References.

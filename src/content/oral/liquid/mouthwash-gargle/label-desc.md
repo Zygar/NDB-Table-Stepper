@@ -1,1 +1,0 @@
-Mouthwashes and gargles should be labelled 'Not to be swallowed'. If the product requires dilution it's important that this is clear on the label. For example, 'Add 5 ml to a glass of warm water and gargle x times daily. Spit out. Do not swallow'.

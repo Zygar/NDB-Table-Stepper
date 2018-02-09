@@ -1,1 +1,0 @@
-Sustained release or prolonged action tablets release their medication continually over a period of time, giving steady blood levels for that period. They are usually made by impregnating an insoluble wax or plastic matrix with the medicine. As this passes along the digestive tract, the medicine is slowly released.

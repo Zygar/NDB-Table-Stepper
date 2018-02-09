@@ -1,1 +1,0 @@
-Pre-filled pens are single-use devices preloaded with the exact dose of medicine. They have an inbuilt needle for ease of use. The client can administer the injection easily and safely without having to see the needle.

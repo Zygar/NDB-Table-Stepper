@@ -1,1 +1,0 @@
-Use collodions in a well ventilated area, as inhalation of the vapours will make the client feel lightheaded. Clients should also stay away from heat, fire, or flame while using collodions. For example, they should be advised not to smoke while applying the collodion mixture. Remind clients that they need to close the lid firmly after use to prevent the product from evaporating.

@@ -1,3 +1,0 @@
-When dispensing the cartridges (pen vials), label them with the dose route and frequency. For example, a clear insulin might be labelled with 'Inject 4 to 6 units subcutaneously before each meal. Adjust dose according to blood glucose readings as instructed'. Storage instructions such as 'Keep in the fridge or discard x days after opening' should be included.
-
-Cloudy insulins must be gently shaken before use, so this instruction should also be added to the label. For example, 'Shake gently, then inject 22 units subcutaneously once daily'. Storage and expiry details are also included on the label or with appropriate auxiliary labels

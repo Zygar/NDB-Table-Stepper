@@ -1,1 +1,0 @@
-If possible, clear the nose of mucus before instilling drops. Tilt the head back or lay down on a flat surface. Insert the dropper a little way into the nostril and squeeze the bottle gently to release the required number of drops. You may need to remind client that the medicine may take a few days to work.

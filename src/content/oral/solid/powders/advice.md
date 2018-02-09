@@ -1,1 +1,0 @@
-Preparations that swell in contact with liquid should always be carefully swallowed with water or fruit juice, and should not be taken immediately before going to bed. Advise clients to stir the powder in liquid for 3--5 seconds and drink promptly.

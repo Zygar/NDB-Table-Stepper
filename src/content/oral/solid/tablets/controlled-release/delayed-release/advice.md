@@ -1,1 +1,0 @@
-Remind clients that these tablets must be swallowed whole because of the special coating on the tablet (it's often easier for clients to follow instructions if they understand why they need to take the medicine in a particular way).

@@ -1,1 +1,0 @@
-Bath oils are labelled with 'CAUTION: NOT TO BE TAKEN. Add x ml (DOSE) to bathwater and bathe or soak once daily (FREQUENCY) as necessary' or 'Use in shower daily'. They may be sponged on to patients who are bedbound.

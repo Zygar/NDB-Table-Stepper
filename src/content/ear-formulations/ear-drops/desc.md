@@ -1,1 +1,0 @@
-Ear drops are solutions or suspensions of medicines in water or other solvents for instilling into the ear. They are intended to have a local action on the ear and usually contain antibiotics, antiseptics, anti-inflammatories, or wax-softening agents.

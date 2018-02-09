@@ -1,1 +1,0 @@
-Suppositories are solid dose forms for administering to the rectum. They come in different shapes and sizes, but are designed to be inserted into the anus. They are designed to melt or dissolve in the rectum and thereby apply the medicine to the mucous membranes of the lower digestive tract. The medicines may have either a local or systemic action.

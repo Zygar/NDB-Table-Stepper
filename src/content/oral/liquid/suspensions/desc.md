@@ -1,1 +1,0 @@
-Suspensions are preparations of insoluble powders suspended in liquid. The undissolved particles may float or settle down to the bottom of the container. They need shaking to evenly disperse the powders before use. Examples include paracetamol suspension and some antacid preparations. Some suspensions are prepared at the time of dispensing -- for example, antibiotic suspensions.

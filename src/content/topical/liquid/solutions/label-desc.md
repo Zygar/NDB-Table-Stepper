@@ -1,1 +1,0 @@
-Solutions and liquids might be labelled with 'Apply to affected area x times daily'. Some may need diluting before use, and this should be added to the instruction 'Dilute with an equal volume of water (DOSE) and apply x times (FREQUENCY) daily'.
