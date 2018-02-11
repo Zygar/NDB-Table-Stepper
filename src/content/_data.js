@@ -1,7 +1,7 @@
 export default {
     questions: [
         {
-            question: "Production manager's salary",
+            questionText: "Production manager's salary",
             correctAnswerIndices: [0, 4]
         }
     ],
