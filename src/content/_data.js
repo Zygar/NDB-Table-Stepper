@@ -1,9 +1,9 @@
 export default {
     questions: [
         {
-            question: "What is the question",
-            answerIndices: [1, 3]
+            question: "Production manager's salary",
+            correctAnswerIndices: [0, 4]
         }
     ],
-    answers: ["One", "Two", "Three", "Four", "Five"]
+    answers: ["Period Cost", "Product Cost", "Direct Material Cost", "Direct Labour Cost", "Manufacturing Overhead Cost"]
 }
