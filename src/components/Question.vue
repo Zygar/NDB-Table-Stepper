@@ -1,7 +1,9 @@
 <template>
     <div class="question">
         <h2>{{questionText}}</h2>
-        <answers :correctAnswerIndices="correctAnswerIndices" :possibleAnswers="possibleAnswers" :questionIndex="questionIndex"></answers>
+        <answers v-for="(answer, index) in possibleAnswers" :index="index" :answer="answer" :uuid="questionIndex + '-' + index" ></answers>
+        <!-- 
+        <answers :correctAnswerIndices="correctAnswerIndices" :possibleAnswers="possibleAnswers" :questionIndex="questionIndex"></answers> -->
     </div>
 </template>
 

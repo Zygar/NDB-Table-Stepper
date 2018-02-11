@@ -2,6 +2,7 @@
     <main id="App"  class="component">
        <h1>Welcome</h1>
        <question v-for="(question, index) in questions" :questionText="question.questionText" :possibleAnswers="answers" :correctAnswerIndices="question.correctAnswerIndices" :questionIndex="index"></question>
+       <button>Check Answers</button>
     </main>
 </template>
 

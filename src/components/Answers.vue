@@ -1,8 +1,6 @@
 <template>
-    <div class="answers">
-        <div v-for="(answer, index) in possibleAnswers">
-            <input type="checkbox" :id="questionIndex + '-' + index"> <label :for="questionIndex + '-' + index">{{answer}}</label>
-        </div>
+    <div class="answer">
+        <input type="checkbox" :id="uuid"> <label :for="uuid">{{answer}}</label>
     </div>
 </template>
 
@@ -12,10 +10,20 @@
     export default {
         name: 'Answers',
         props: {
-            correctAnswerIndices: Array,
-            possibleAnswers: Array,
-            questionIndex: Number
-        }
+            answer: String,
+            index: Number,
+            uuid: String
+        },
+        // computed: {
+        //     isCorrect () {
+        //         for (var i = this.correctAnswerIndices.length - 1; i >= 0; i--) {
+        //             let current = this.correctAnswerIndices[i],
+        //                 actual = this.index;
+
+        //             if (current == actual) {console.log(current, actual); return true}
+        //         }
+        //     }
+        // }
         // data () {
         // }
     }
