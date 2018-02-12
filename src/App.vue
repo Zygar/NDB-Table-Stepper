@@ -1,5 +1,5 @@
 <template>
-    <main id="App"  class="component" :class="allTrue">
+    <main id="App"  class="component" :class="'all-answered-'+allAnswered">
        <h1>Welcome</h1>
        <question v-for="(question, index) in questions" 
                  :questionText="question.questionText" 
@@ -30,7 +30,10 @@ export default {
     }, 
     methods: { 
         enterCheckAnswerMode () {
-            this.currentMode="answers";
+            if (this.allAnswered == true) {
+                this.currentMode="answers";    
+            }
+            else {alert("Please answer all the questions first!")}
         }
      },
     mounted () {
@@ -61,3 +64,13 @@ export default {
 // And change "Check Answers" to Reset Answers
 // And make Reset answers set everything back to default
 </script>
+
+<style type="text/css">
+    .all-answered-false button {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+    .all-answered-true button {
+        cursor: pointer;
+    }
+</style>
