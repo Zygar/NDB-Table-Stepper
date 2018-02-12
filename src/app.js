@@ -31,5 +31,5 @@ new Vue({
   components: { App }
 });
 
-Vue.use(VueTippy);
+// Vue.use(VueTippy);
 
