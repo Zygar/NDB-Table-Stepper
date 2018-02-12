@@ -7,7 +7,7 @@
                      :answer="answer" 
                      :uuid="questionIndex + '-' + index" 
                      :correctAnswerIndices="correctAnswerIndices"
-                     :currentMode="currentMode"
+                     :answerMode="answerMode"
                      :questionIndex="questionIndex"
                      ></answer>    
         </div>
@@ -26,7 +26,7 @@
             questionIndex: Number,
             correctAnswerIndices: Array,
             possibleAnswers: Array,
-            currentMode: String
+            answerMode: Boolean
         },
         data () {
             let model = {

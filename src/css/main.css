@@ -17,26 +17,44 @@
 body {
   color: var(--off-black);
   font-family: Lato;
+  margin: 0;
 }
 
 * {box-sizing: border-box;}
 
 #App {
   width: 100%;
-  padding: 1em
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.primary-header {
+    background-color: var(--light-blue);
+    color:#fff;
+    font-size: 1.25em;
+    padding: 1em;
+}
+
+.primary-header p {
+    max-width: 35em
 }
 
 .question-header {
 
 }
 
-.question-list {
-
+.questions {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .question-footer {
     background-color: var(--light-blue);
     padding: 1em;
+    flex-grow: 1;
 }
 
 .question {
@@ -73,11 +91,12 @@ body {
     .question {
         display: flex;
         align-content: stretch;
-    }   
+    }
 
     .question-text {
-        width: 150px;
-        font-size: 1.25em;
+        width: 180px;
+        font-size: 1em;
+        align-self: center;
     } 
     .answer-list, .answer-heading-list {
         display: flex;
@@ -92,8 +111,7 @@ body {
         display: none!important
     }
     .question-header {
-        display: flex;
-        padding-left: 150px;
+        padding-left: 180px;
     }
     .answer-header-label, .answer {
         flex:1;

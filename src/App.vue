@@ -1,6 +1,11 @@
 <template>
     <main id="App"  class="component" :class="'all-answered-'+allAnswered" :totalAnswers="totalAnswers">
-        
+        <header class="primary-header">
+            <p v-if="!answerMode">For each cost item below, select the best classification to describe the cost. More than one classification may apply to the same cost item.</p>
+            <p v-if="answerMode">
+                Out of {{totalAnswers}}, you got {{yourAnswers.correct}} right, {{yourAnswers.incorrect}} wrong and you missed {{yourAnswers.missed}}
+            </p>
+        </header>
         <section class="questions">
             <header class="question-header">
                 <div class="answer-heading-list">
@@ -14,10 +19,11 @@
                       :possibleAnswers="answers" 
                       :correctAnswerIndices="question.correctAnswerIndices" 
                       :questionIndex="index"
-                      :currentMode="currentMode"></question>
+                      :answerMode="answerMode"></question>
             </div>
             <footer class="question-footer">
                 <button class="button" @click="enterCheckAnswerMode()">Check Answers</button>    
+                <button class="button" @click="resetQuiz()">Reset and try again</button>    
             </footer>
        </section>
     </main>
@@ -35,7 +41,7 @@ export default {
     components: { Question  },
     data () { 
         let quiz = data;
-            quiz.currentMode = "questions",
+            quiz.answerMode = false,
             quiz.answeredQuestions = {}, 
             quiz.allAnswered = false, 
             quiz.yourAnswers = {
@@ -59,9 +65,15 @@ export default {
     methods: { 
         enterCheckAnswerMode () {
             if (this.allAnswered == true) {
-                this.currentMode="answers";    
+                this.answerMode = true;    
             }
             else {alert("Please answer all the questions first!")}
+        },
+        resetQuiz() {
+            this.answerMode = false;
+            this.yourAnswers.correct = 0;
+            this.yourAnswers.missed = 0;
+            this.yourAnswers.incorrect = 0
         }
      },
     mounted () {

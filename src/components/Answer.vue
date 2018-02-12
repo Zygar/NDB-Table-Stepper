@@ -1,7 +1,7 @@
 <template>
     <div class="answer" 
         :isRightAnswer="isRightAnswer"
-        :currentMode="currentMode"
+        :answerMode="answerMode"
         :class="'answer-' + answerStatus.answerState">
         <input class="answer-checkbox" type="checkbox" :id="uuid" v-model="answerStatus.isChecked"> <label class="answer-label" :for="uuid">{{answer}}</label>
     </div>
@@ -17,7 +17,7 @@
             index: Number,
             uuid: String,
             correctAnswerIndices: Array,
-            currentMode: String,
+            answerMode: Boolean,
             questionIndex: Number
         },
         computed: {
@@ -45,21 +45,28 @@
             return {answerStatus};
         },
         watch: {
-            currentMode () {
+            answerMode () {
                 // Triggers on switch to Answer Mode
-                console.log("Time to check the answers");
-                if (this.answerStatus.isChecked == true && this.isRightAnswer == true) {
-                    this.answerStatus.answerState = "correct";
-                    eventHub.$emit('correctAnswer')
-                } else if (this.answerStatus.isChecked != true && this.isRightAnswer == true) {
-                    this.answerStatus.answerState = "missed"
-                    eventHub.$emit('missedAnswer')
-                } else if (this.answerStatus.isChecked == true && this.isRightAnswer != true) {
-                    this.answerStatus.answerState = "incorrect"
-                    eventHub.$emit('incorrectAnswer')
+                if (this.answerMode == true) {
+                    console.log("Time to check the answers");
+                    if (this.answerStatus.isChecked == true && this.isRightAnswer == true) {
+                        this.answerStatus.answerState = "correct";
+                        eventHub.$emit('correctAnswer')
+                    } else if (this.answerStatus.isChecked != true && this.isRightAnswer == true) {
+                        this.answerStatus.answerState = "missed"
+                        eventHub.$emit('missedAnswer')
+                    } else if (this.answerStatus.isChecked == true && this.isRightAnswer != true) {
+                        this.answerStatus.answerState = "incorrect"
+                        eventHub.$emit('incorrectAnswer')
+                    } else {
+                        this.answerStatus.answerState = "irrelevant"
+                    }
                 } else {
-                    this.answerStatus.answerState = "irrelevant"
+                    console.log("Time to reset...")
+                    this.answerStatus.isChecked = false; 
+                    this.answerStatus.answerState = "unanswered";
                 }
+                
             }, 
             checkedAnswerDetails (data) {
                 eventHub.$emit('answerChecked', data);
