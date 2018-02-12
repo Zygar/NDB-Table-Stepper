@@ -66,22 +66,22 @@ body {
     vertical-align: middle;
     margin: .25em
 }
+.question-header {display: none}
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
+    .question-header {display: block;}
     .question {
         display: flex;
         align-content: stretch;
     }   
 
     .question-text {
-        width: 200px
+        width: 150px;
+        font-size: 1.25em;
     } 
     .answer-list, .answer-heading-list {
         display: flex;
         flex-basis: 100px!important;
-        flex:1;
-    }
-    .answer {
         flex:1;
     }
     .answer-checkbox {
@@ -93,12 +93,15 @@ body {
     }
     .question-header {
         display: flex;
-        padding-left: 200px;
-        
+        padding-left: 150px;
     }
-    .answer-header-label {
+    .answer-header-label, .answer {
         flex:1;
         text-align: center;
+        padding: .5em;
+        font-size: .8em;
+        font-weight:bold;
+        min-width: 100px;
     }
 }
 
