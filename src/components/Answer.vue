@@ -1,8 +1,9 @@
 <template>
     <div class="answer" 
-        :isCorrect="isCorrect"
-        :currentMode="currentMode">
-        <input type="checkbox" :id="uuid"> <label :for="uuid">{{answer}}</label>
+        :isRightAnswer="isRightAnswer"
+        :currentMode="currentMode"
+        :class="'answer-' + answerStatus.answerState">
+        <input type="checkbox" :id="uuid" v-model="answerStatus.isChecked"> <label :for="uuid">{{answer}}</label>
     </div>
 </template>
 
@@ -19,17 +20,35 @@
             currentMode: String
         },
         computed: {
-            isCorrect () {
+            isRightAnswer () {
                 for (var i = this.correctAnswerIndices.length - 1; i >= 0; i--) {
                     let current = this.correctAnswerIndices[i],
                         actual = this.index;
-                    if (current == actual) {return true}
+                    if (current == actual) {return true} 
                 }
             }
         },
+        data () {
+            let answerStatus = {
+                isCorrect: false,
+                answerState: "unanswered"
+            }
+            return {answerStatus};
+        },
         watch: {
             currentMode () {
-                console.log("Time to check the answers")
+                // Triggers on switch to Answer Mode
+
+                console.log("Time to check the answers");
+                if (this.answerStatus.isChecked == true && this.isRightAnswer == true) {
+                    this.answerStatus.answerState = "correct";
+                } else if (this.answerStatus.isChecked != true && this.isRightAnswer == true) {
+                    this.answerStatus.answerState = "missed"
+                } else if (this.answerStatus.isChecked == true && this.isRightAnswer != true) {
+                    this.answerStatus.answerState = "incorrect"
+                } else {
+                    this.answerStatus.answerState = "irrelevant"
+                }
             }
         }
         // data () {
@@ -45,3 +64,14 @@
     }
 </script>
 
+<style type="text/css">
+    .answer-correct {
+        border: 2px solid green;
+    }
+    .answer-incorrect {
+        border: 2px solid red;
+    }
+    .answer-missed {
+        border: 2px solid yellow;
+    }
+</style>
