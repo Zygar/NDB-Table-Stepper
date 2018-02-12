@@ -1,23 +1,27 @@
 <template>
     <div class="question">
         <h2>{{questionText}}</h2>
-        <answers v-for="(answer, index) in possibleAnswers" :index="index" :answer="answer" :uuid="questionIndex + '-' + index" ></answers>
-        <!-- 
-        <answers :correctAnswerIndices="correctAnswerIndices" :possibleAnswers="possibleAnswers" :questionIndex="questionIndex"></answers> -->
+        <answer v-for="(answer, index) in possibleAnswers" 
+                 :index="index" 
+                 :answer="answer" 
+                 :uuid="questionIndex + '-' + index" 
+                 :correctAnswerIndices="correctAnswerIndices"
+                 :currentMode="currentMode"></answer>
     </div>
 </template>
 
 <script>
     import eventHub from '../eventHub.js';
-    import Answers from './Answers.vue';
+    import Answer from './Answer.vue';
     export default {
         name: 'Question',
-        components: { Answers  },
+        components: { Answer  },
         props: {
             questionText: String,
             questionIndex: Number,
             correctAnswerIndices: Array,
-            possibleAnswers: Array
+            possibleAnswers: Array,
+            currentMode: String
         }
         // data () {
         // }

@@ -1,8 +1,13 @@
 <template>
     <main id="App"  class="component">
        <h1>Welcome</h1>
-       <question v-for="(question, index) in questions" :questionText="question.questionText" :possibleAnswers="answers" :correctAnswerIndices="question.correctAnswerIndices" :questionIndex="index"></question>
-       <button>Check Answers</button>
+       <question v-for="(question, index) in questions" 
+                 :questionText="question.questionText" 
+                 :possibleAnswers="answers" 
+                 :correctAnswerIndices="question.correctAnswerIndices" 
+                 :questionIndex="index"
+                 :currentMode="currentMode"></question>
+       <button @click="enterCheckAnswerMode()">Check Answers</button>
     </main>
 </template>
 
@@ -18,8 +23,13 @@ export default {
     components: { Question  },
     data () { 
         let quiz = data;
+            quiz.currentMode = "questions"
         return quiz
     }, 
-    methods: { }
+    methods: { 
+        enterCheckAnswerMode () {
+            this.currentMode="answers";
+        }
+     }
 }
 </script>
