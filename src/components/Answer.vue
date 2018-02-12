@@ -77,12 +77,12 @@
 
 <style type="text/css">
     .answer-correct {
-        border: 2px solid green;
+        /*border: 2px solid green;*/
     }
     .answer-incorrect {
-        border: 2px solid red;
+        /*border: 2px solid red;*/
     }
     .answer-missed {
-        border: 2px solid yellow;
+        /*border: 2px solid yellow;*/
     }
 </style>

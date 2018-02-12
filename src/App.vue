@@ -22,17 +22,17 @@
                       :answerMode="answerMode"></question>
             </div>
             <footer class="question-footer">
-                <button class="button" @click="enterCheckAnswerMode()">Check Answers</button>    
-                <button class="button" @click="resetQuiz()">Reset and try again</button>    
+                <button class="button" v-if="!answerMode" @click="enterCheckAnswerMode()">Check Answers</button>    
+                <p v-if="answerMode">
+                    Out of {{totalAnswers}}, you got {{yourAnswers.correct}} right, {{yourAnswers.incorrect}} wrong and you missed {{yourAnswers.missed}}
+                </p>
+                <button class="button" v-if="answerMode" @click="resetQuiz()">Reset and try again</button>    
             </footer>
        </section>
     </main>
 </template>
 
 <script>
-// import sourceData from './content/_data.js';
-// import InfoView from './components/InfoView.vue';
-// import NavigationView from './components/NavigationView.vue';
 import eventHub from './eventHub.js';
 import Question from './components/Question.vue';
 import data from './content/_data.js';
@@ -107,8 +107,6 @@ export default {
 
     }
 }
-// LAST bit of logic before we get down to presentation:
-// reveal a reset button that sets data back to default upon completion. 
 </script>
 
 <style type="text/css">
