@@ -1,13 +1,31 @@
 <template>
     <main id="App"  class="component" :class="'all-answered-'+allAnswered" :totalAnswers="totalAnswers">
-       <h1>Welcome</h1>
-       <question v-for="(question, index) in questions" 
-                 :questionText="question.questionText" 
-                 :possibleAnswers="answers" 
-                 :correctAnswerIndices="question.correctAnswerIndices" 
-                 :questionIndex="index"
-                 :currentMode="currentMode"></question>
-       <button @click="enterCheckAnswerMode()">Check Answers</button>
+        <header class="primary-header">
+            <p v-if="!answerMode">For each cost item below, select the best classification to describe the cost. More than one classification may apply to the same cost item.</p>
+            <p v-if="answerMode">
+                Out of {{totalAnswers}}, you got {{yourAnswers.correct}} right, {{yourAnswers.incorrect}} wrong and you missed {{yourAnswers.missed}}
+            </p>
+        </header>
+        <section class="questions">
+            <header class="question-header">
+                <div class="answer-heading-list">
+                    <div class="answer-header-label" v-for="answer in answers">{{answer}}</div>                    
+                </div>
+
+            </header>
+            <div class="question-list">
+                <question v-for="(question, index) in questions" 
+                      :questionText="question.questionText" 
+                      :possibleAnswers="answers" 
+                      :correctAnswerIndices="question.correctAnswerIndices" 
+                      :questionIndex="index"
+                      :answerMode="answerMode"></question>
+            </div>
+            <footer class="question-footer">
+                <button class="button" @click="enterCheckAnswerMode()">Check Answers</button>    
+                <button class="button" @click="resetQuiz()">Reset and try again</button>    
+            </footer>
+       </section>
     </main>
 </template>
 
@@ -23,7 +41,7 @@ export default {
     components: { Question  },
     data () { 
         let quiz = data;
-            quiz.currentMode = "questions",
+            quiz.answerMode = false,
             quiz.answeredQuestions = {}, 
             quiz.allAnswered = false, 
             quiz.yourAnswers = {
@@ -47,9 +65,15 @@ export default {
     methods: { 
         enterCheckAnswerMode () {
             if (this.allAnswered == true) {
-                this.currentMode="answers";    
+                this.answerMode = true;    
             }
             else {alert("Please answer all the questions first!")}
+        },
+        resetQuiz() {
+            this.answerMode = false;
+            this.yourAnswers.correct = 0;
+            this.yourAnswers.missed = 0;
+            this.yourAnswers.incorrect = 0
         }
      },
     mounted () {
@@ -83,12 +107,8 @@ export default {
 
     }
 }
-// and here, when questionsAnswered updates, we run a check—of all the questions, are they all TRUE? if so, quizCompletable is set to true. 
-// TODO: 
-// Lock answer button until all questions have at least one answer. 
-// When mode is "answers", disable input on all checkboxes
-// And change "Check Answers" to Reset Answers
-// And make Reset answers set everything back to default
+// LAST bit of logic before we get down to presentation:
+// reveal a reset button that sets data back to default upon completion. 
 </script>
 
 <style type="text/css">

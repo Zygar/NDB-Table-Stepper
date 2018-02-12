@@ -1,14 +1,17 @@
 <template>
     <div class="question">
-        <h2>{{questionText}}</h2>
-        <answer v-for="(answer, index) in possibleAnswers" 
-                 :index="index" 
-                 :answer="answer" 
-                 :uuid="questionIndex + '-' + index" 
-                 :correctAnswerIndices="correctAnswerIndices"
-                 :currentMode="currentMode"
-                 :questionIndex="questionIndex"
-                 ></answer>
+        <h2 class="question-text">{{questionText}}</h2>
+        <div class="answer-list">
+            <answer v-for="(answer, index) in possibleAnswers" 
+                     :index="index" 
+                     :answer="answer" 
+                     :uuid="questionIndex + '-' + index" 
+                     :correctAnswerIndices="correctAnswerIndices"
+                     :answerMode="answerMode"
+                     :questionIndex="questionIndex"
+                     ></answer>    
+        </div>
+        
     </div>
 </template>
 
@@ -23,7 +26,7 @@
             questionIndex: Number,
             correctAnswerIndices: Array,
             possibleAnswers: Array,
-            currentMode: String
+            answerMode: Boolean
         },
         data () {
             let model = {
@@ -55,4 +58,7 @@
         // this holds an array of the selected answers. when they change, we emit an event to App, simply returning the questionID and true or false depending on whether or not the array is empty or not
     }
 </script>
+<style type="text/css">
+    
+</style>
 
