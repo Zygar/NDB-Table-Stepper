@@ -19,6 +19,135 @@ body {
   font-family: Lato;
 }
 
+* {box-sizing: border-box;}
+
 #App {
-  
+  width: 100%;
+  padding: 1em
 }
+
+.question-header {
+
+}
+
+.question-list {
+
+}
+
+.question-footer {
+    background-color: var(--light-blue);
+    padding: 1em;
+}
+
+.question {
+    
+    border-bottom: 1px solid var(--off-white);
+    margin-bottom: .5em
+
+}
+
+.question-text {
+    margin: 0
+}
+
+.answer-list {
+    /*padding: .25em;*/
+}
+
+.answer {
+
+}
+
+.answer {display:flex; align-items: center; }
+.answer-checkbox {
+    visibility: hidden;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    margin: .25em
+}
+
+@media screen and (min-width: 600px) {
+    .question {
+        display: flex;
+        align-content: stretch;
+    }   
+
+    .question-text {
+        width: 200px
+    } 
+    .answer-list, .answer-heading-list {
+        display: flex;
+        flex-basis: 100px!important;
+        flex:1;
+    }
+    .answer {
+        flex:1;
+    }
+    .answer-checkbox {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .answer-label {
+        display: none!important
+    }
+    .question-header {
+        display: flex;
+        padding-left: 200px;
+        
+    }
+    .answer-header-label {
+        flex:1;
+        text-align: center;
+    }
+}
+
+
+
+.answer-checkbox::after {
+    content: "";
+    display: block;
+    visibility: visible;
+    width: 48px;
+    height: 48px;
+    background-color: var(--off-white);
+    border-radius: 4px;
+    font-size: 2em;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.answer-checkbox:checked::after {
+    content: "⚫️";
+    background-color: var(--light-blue);
+    color: #fff;
+}
+
+.answer-correct .answer-checkbox:checked::after {
+    content: "✔️️";
+    background-color: var(--light-green);
+}
+
+.answer-incorrect .answer-checkbox:checked::after {
+    content: "✖️️️";
+    background-color: var(--light-red);
+}
+
+.answer-missed .answer-checkbox::after {
+    content: "❕";
+    background-color: var(--light-yellow);
+}
+.answer-label {
+    display: block;
+    font-size: 1.25em;
+    margin: .25em;
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    height: 64px;
+    background-color: var(--dark-blue);
+}
+

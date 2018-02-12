@@ -1,13 +1,25 @@
 <template>
     <main id="App"  class="component" :class="'all-answered-'+allAnswered" :totalAnswers="totalAnswers">
-       <h1>Welcome</h1>
-       <question v-for="(question, index) in questions" 
-                 :questionText="question.questionText" 
-                 :possibleAnswers="answers" 
-                 :correctAnswerIndices="question.correctAnswerIndices" 
-                 :questionIndex="index"
-                 :currentMode="currentMode"></question>
-       <button @click="enterCheckAnswerMode()">Check Answers</button>
+        
+        <section class="questions">
+            <header class="question-header">
+                <div class="answer-heading-list">
+                    <div class="answer-header-label" v-for="answer in answers">{{answer}}</div>                    
+                </div>
+
+            </header>
+            <div class="question-list">
+                <question v-for="(question, index) in questions" 
+                      :questionText="question.questionText" 
+                      :possibleAnswers="answers" 
+                      :correctAnswerIndices="question.correctAnswerIndices" 
+                      :questionIndex="index"
+                      :currentMode="currentMode"></question>
+            </div>
+            <footer class="question-footer">
+                <button class="button" @click="enterCheckAnswerMode()">Check Answers</button>    
+            </footer>
+       </section>
     </main>
 </template>
 
@@ -83,12 +95,8 @@ export default {
 
     }
 }
-// and here, when questionsAnswered updates, we run a check—of all the questions, are they all TRUE? if so, quizCompletable is set to true. 
-// TODO: 
-// Lock answer button until all questions have at least one answer. 
-// When mode is "answers", disable input on all checkboxes
-// And change "Check Answers" to Reset Answers
-// And make Reset answers set everything back to default
+// LAST bit of logic before we get down to presentation:
+// reveal a reset button that sets data back to default upon completion. 
 </script>
 
 <style type="text/css">
