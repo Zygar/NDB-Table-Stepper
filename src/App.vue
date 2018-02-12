@@ -1,5 +1,5 @@
 <template>
-    <main id="App"  class="component" :class="'all-answered-'+allAnswered">
+    <main id="App"  class="component" :class="'all-answered-'+allAnswered" :totalAnswers="totalAnswers">
        <h1>Welcome</h1>
        <question v-for="(question, index) in questions" 
                  :questionText="question.questionText" 
@@ -25,9 +25,25 @@ export default {
         let quiz = data;
             quiz.currentMode = "questions",
             quiz.answeredQuestions = {}, 
-            quiz.allAnswered = false
+            quiz.allAnswered = false, 
+            quiz.yourAnswers = {
+                correct: 0,
+                missed: 0,
+                incorrect: 0
+            }
         return quiz
     }, 
+    computed: {
+        totalAnswers() {
+            let totalAnswerSum = 0;
+            for (var i = this.questions.length - 1; i >= 0; i--) {
+                totalAnswerSum = totalAnswerSum + this.questions[i].correctAnswerIndices.length;
+                // console.log("LOL WE LOOPING FUCK YOU CUNT")
+                // console.log(this.questions[i].correctAnswerIndices.length)
+            }
+            return totalAnswerSum
+        }
+    },
     methods: { 
         enterCheckAnswerMode () {
             if (this.allAnswered == true) {
@@ -54,7 +70,17 @@ export default {
                     else {this.allAnswered = false}
                 } 
             }
+        }),
+        eventHub.$on('correctAnswer', () => {
+            this.yourAnswers.correct ++ 
+        }),
+        eventHub.$on('incorrectAnswer', () => {
+            this.yourAnswers.incorrect ++ 
+        }),
+        eventHub.$on('missedAnswer', () => {
+            this.yourAnswers.missed ++ 
         })
+
     }
 }
 // and here, when questionsAnswered updates, we run a check—of all the questions, are they all TRUE? if so, quizCompletable is set to true. 

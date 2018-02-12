@@ -47,30 +47,24 @@
         watch: {
             currentMode () {
                 // Triggers on switch to Answer Mode
-
                 console.log("Time to check the answers");
                 if (this.answerStatus.isChecked == true && this.isRightAnswer == true) {
                     this.answerStatus.answerState = "correct";
+                    eventHub.$emit('correctAnswer')
                 } else if (this.answerStatus.isChecked != true && this.isRightAnswer == true) {
                     this.answerStatus.answerState = "missed"
+                    eventHub.$emit('missedAnswer')
                 } else if (this.answerStatus.isChecked == true && this.isRightAnswer != true) {
                     this.answerStatus.answerState = "incorrect"
+                    eventHub.$emit('incorrectAnswer')
                 } else {
                     this.answerStatus.answerState = "irrelevant"
                 }
             }, 
             checkedAnswerDetails (data) {
-                console.log("Emitting once")
                 eventHub.$emit('answerChecked', data);
             }
         }
-        // data () {
-        // }
-        // upon isChecked change to TRUE, emit an event carrying the index. Question will watch and maintain an array. 
-        // upon isChecked change to FALSE, emit an event carrying the index. Question will splice it out of the array. 
-
-        // TODO: Bubble something up to the parents for scoring. 
-
     }
 </script>
 
