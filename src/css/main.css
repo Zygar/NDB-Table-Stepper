@@ -107,7 +107,7 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-    .answer-label {
+    .answer-label .label-text {
         display: none!important
     }
     .question-header {
@@ -125,7 +125,7 @@ body {
 
 
 
-.answer-checkbox::after {
+/*.answer-checkbox::after {
     content: "";
     display: block;
     visibility: visible;
@@ -137,25 +137,39 @@ body {
     text-align: center;
     line-height: 48px;
     cursor: pointer;
+}*/
+
+.answer-label::before {
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    width: 48px;
+    height: 48px;
+    background-color: var(--off-white);
+    border-radius: 4px;
+    font-size: 2em;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
 }
 
-.answer-checkbox:checked::after {
+.answer-checkbox:checked + .answer-label::before {
     content: "⚫️";
     background-color: var(--light-blue);
     color: #fff;
 }
 
-.answer-correct .answer-checkbox:checked::after {
+.answer-correct .answer-checkbox:checked + .answer-label::before {
     content: "✔️️";
     background-color: var(--light-green);
 }
 
-.answer-incorrect .answer-checkbox:checked::after {
+.answer-incorrect .answer-checkbox:checked + .answer-label::before {
     content: "✖️️️";
     background-color: var(--light-red);
 }
 
-.answer-missed .answer-checkbox::after {
+.answer-missed .answer-checkbox + .answer-label::before {
     content: "❕";
     background-color: var(--light-yellow);
 }

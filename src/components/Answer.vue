@@ -3,7 +3,7 @@
         :isRightAnswer="isRightAnswer"
         :answerMode="answerMode"
         :class="'answer-' + answerStatus.answerState">
-        <input class="answer-checkbox" type="checkbox" :id="uuid" v-model="answerStatus.isChecked"> <label class="answer-label" :for="uuid">{{answer}}</label>
+        <input class="answer-checkbox" type="checkbox" :disabled="answerMode" :id="uuid" v-model="answerStatus.isChecked"> <label class="answer-label" :for="uuid"><span class="label-text">{{answer}}</span></label>
     </div>
 </template>
 
