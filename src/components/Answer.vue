@@ -17,7 +17,8 @@
             index: Number,
             uuid: String,
             correctAnswerIndices: Array,
-            currentMode: String
+            currentMode: String,
+            questionIndex: Number
         },
         computed: {
             isRightAnswer () {
@@ -26,12 +27,20 @@
                         actual = this.index;
                     if (current == actual) {return true} 
                 }
+            },
+            checkedAnswerDetails() {
+                return {
+                    isChecked: this.answerStatus.isChecked, 
+                    index: this.index,
+                    questionIndex: this.questionIndex
+                };
             }
         },
         data () {
             let answerStatus = {
                 isCorrect: false,
-                answerState: "unanswered"
+                answerState: "unanswered",
+                isChecked: false
             }
             return {answerStatus};
         },
@@ -49,18 +58,19 @@
                 } else {
                     this.answerStatus.answerState = "irrelevant"
                 }
+            }, 
+            checkedAnswerDetails (data) {
+                console.log("Emitting once")
+                eventHub.$emit('answerChecked', data);
             }
         }
         // data () {
         // }
-        // So we're going to have some data on an Answer to indicate whether it's checked or not.
-        // There'll be a method higher up the chain, that upon being fired will trigger a method here
-        // And will check whether or not the item is both checked and correct
-        // If it's checked and correct we'll set the class to green
-        // If it's checked and incorrect we'll set the class to red
-        // If it's not checked, and it's the correct answer, we'll set it to yellow
-        // We'll then figure out how to bubble something back up to the parent question / app so you can get a total
-        // If it's checked and 
+        // upon isChecked change to TRUE, emit an event carrying the index. Question will watch and maintain an array. 
+        // upon isChecked change to FALSE, emit an event carrying the index. Question will splice it out of the array. 
+
+        // TODO: Bubble something up to the parents for scoring. 
+
     }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <main id="App"  class="component">
+    <main id="App"  class="component" :class="allTrue">
        <h1>Welcome</h1>
        <question v-for="(question, index) in questions" 
                  :questionText="question.questionText" 
@@ -23,13 +23,41 @@ export default {
     components: { Question  },
     data () { 
         let quiz = data;
-            quiz.currentMode = "questions"
+            quiz.currentMode = "questions",
+            quiz.answeredQuestions = {}, 
+            quiz.allAnswered = false
         return quiz
     }, 
     methods: { 
         enterCheckAnswerMode () {
             this.currentMode="answers";
         }
-     }
+     },
+    mounted () {
+        eventHub.$on('answerCountUpdated', (data) => {
+            if (data.answerCount > 0) {
+                this.answeredQuestions[data.questionIndex] = true;
+            } else if (data.answerCount == 0) {
+                this.answeredQuestions[data.questionIndex] = false;
+            }
+            let qtyAnswers = Object.keys(this.answeredQuestions).length,
+                qtyQuestions = this.questions.length;
+            if (qtyAnswers == qtyQuestions) {
+                console.log("We might be nearing the finish line, one last check")
+                for (var o in this.answeredQuestions) {
+                    if (this.answeredQuestions[o]) {
+                        this.allAnswered = true;
+                    }
+                    else {this.allAnswered = false}
+                } 
+            }
+        })
+    }
 }
+// and here, when questionsAnswered updates, we run a check—of all the questions, are they all TRUE? if so, quizCompletable is set to true. 
+// TODO: 
+// Lock answer button until all questions have at least one answer. 
+// When mode is "answers", disable input on all checkboxes
+// And change "Check Answers" to Reset Answers
+// And make Reset answers set everything back to default
 </script>
