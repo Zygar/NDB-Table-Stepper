@@ -1,9 +1,9 @@
 /*  ==========================================================================
     Vendor Imports
     ========================================================================== */
-@import "normalize.css";
-@import url(vendor/html5bp-defaults.css);
-@import url(vendor/html5bp-helpers.css);
+/*@import "normalize.css";*/
+/*@import url(vendor/html5bp-defaults.css);*/
+/*@import url(vendor/html5bp-helpers.css);*/
 
 /* ==========================================================================
    Our Imports
@@ -20,8 +20,28 @@ body {
   margin: 0;
 }
 
-* {box-sizing: border-box;}
-
 #App {
  
+}
+
+table {
+    width: 100%;
+}
+.line-description {
+    width: 50%;
+}
+td {
+    border: 1px solid black;
+    line-height: 1.5em;
+    height: 1.5em;
+}
+
+.table-step-1 .step-1, 
+.table-step-2 .step-2,
+.table-step-3 .step-3,
+.table-step-4 .step-4,
+.table-step-5 .step-5,
+.table-step-6 .step-6,
+.table-step-7 .step-7 {
+    background-color: var(--light-blue)
 }
