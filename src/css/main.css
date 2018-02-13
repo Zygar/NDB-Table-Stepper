@@ -18,6 +18,7 @@ body {
   color: var(--off-black);
   font-family: Lato;
   margin: 0;
+  background-color: var(--dark-blue)
 }
 
 #App {
@@ -32,9 +33,10 @@ table {
     width: 50%;
 }
 td {
-    border: 1px solid black;
-    line-height: 2em;
+    border: 1px solid #d2d2d2;
+    line-height: 130%;
     height: 2em;
+    padding: .25em;
 }
 
 .close-bal {
@@ -42,6 +44,10 @@ td {
 }
 .header-row {
     background-color: #ddd
+}
+
+.step-highlight {
+    transition: background-color 0.1s ease-in-out;
 }
 .close-bal {background-color: #eee}
 .table-step-1 .step-1, 
@@ -53,3 +59,74 @@ td {
 .table-step-7 .step-7 {
     background-color: var(--light-blue)
 }
+
+@media (min-width: 420px) {
+    .tables {
+        display: flex;
+    }
+}
+
+.tables {
+    background-color: #fff;
+    margin: .5em;
+    padding: .5em;
+    box-shadow: 2px 2px rgba(0,0,0,0.5)
+}
+
+.tables > section {
+    flex:1;
+    margin: 1em;
+}
+.stepper {
+    display: flex; 
+    align-items: baseline; 
+    background-color: var(--dark-blue);
+    user-select: none;
+}
+.stepper > div {flex:1; text-align: center; margin: .25em;}
+.current-step {flex:2; min-width: 50%;}
+.stepper button { 
+    font-size: 1.5em;
+    line-height: 2em;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--light-green);
+    border-radius:4px;
+    border:none;
+    color: #fff;
+    box-shadow: 0 2px rgba(0,0,0,0.25);
+
+ }
+ .stepper button:focus {
+    outline: none
+ }
+ .stepper-highlight {padding:1em; font-size: 1em;}
+
+header {
+    box-shadow: 0 2px 2px rgba(0,0,0,0.15), 0 1px 0 rgba(0,0,0,0.1);
+    background-color: var(--light-blue);
+    color: #fff;
+    text-shadow: 1px 1px rgba(0,0,0,0.25);
+}
+
+@media (min-width: 420px) {
+    .stepper-highlight {padding:1em; font-size: 1.25em;}
+}
+@media (max-width: 419px) {
+    .stepper {
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    .stepper-highlight {
+        margin-top: 3.25em;
+    }
+}
+
+.table-header {
+    background-color: var(--dark-blue);
+    color: #fff;
+    font-weight: bold;
+}
+
+h2 {margin:0 0 .75em 0;}
