@@ -33,8 +33,8 @@ table {
 }
 td {
     border: 1px solid black;
-    line-height: 1.5em;
-    height: 1.5em;
+    line-height: 2em;
+    height: 2em;
 }
 
 .close-bal {
@@ -43,6 +43,7 @@ td {
 .header-row {
     background-color: #ddd
 }
+.close-bal {background-color: #eee}
 .table-step-1 .step-1, 
 .table-step-2 .step-2,
 .table-step-3 .step-3,
