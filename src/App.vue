@@ -1,6 +1,17 @@
 <template>
     <main id="App"  :class="'table-step-'+step">
-        <header>We'll put the step-by-step thing here and make it fixed <input type="number" v-model="step" name=""></header>
+        <header>
+            We'll put the step-by-step thing here and make it fixed <input type="number" v-model="step" name="">
+            <div class="step-content">
+                <p v-if="step == 1">Purchase grapes and other raw materials (enough to produce 50 units), $500 (add to raw materials inventory)</p>
+                <p v-if="step == 2">Incur  other  manufacturing costs through the production process, for example, wine-maker costs, bottles and labels (enough to produce  40 units), $600 (add to work in process inventory)</p>
+                <p v-if="step == 3">Recognise a portion  of the raw material consumed in the current work in process of 15 cases of wine being made, $150 (transfer from raw materials inventory to work in process inventory)</p>
+                <p v-if="step == 4"> 12 cases of wine are bottled and ready for sale, collate the full unit costs of getting the wine to finished state, $300 (transfer from  work in process inventory to finished goods inventory)</p>
+                <p v-if="step == 5">Sell 10 cases of wine, $450 (recorded  as sales in the income statement)</p>
+                <p v-if="step == 6">Expense the cost of those 10 cases of wine, $250 (transfer from finished goods inventory to cost of goods sold in the income statement</p>
+            </div>
+
+        </header>
         <section> 
             <h2>Statement of Financial Position</h2>
             <table >
@@ -12,7 +23,7 @@
                 </tr>
                 <!-- Part One -->
 
-                <tr>
+                <tr class="header-row">
                     <td class="line-description"></td>
                     <td colspan="2">Raw material inventory</td>
                 </tr>
@@ -28,13 +39,13 @@
                     <td></td>
                     <td><span class="step" v-if="step >= 3">150</span></td>
                 </tr>
-                <tr>
+                <tr class="step-3  close-bal">
                     <td class="line-description">Close bal</td>
-                    <td>350</td>
+                    <td><span class="step"  v-if="step >=3">350</span></td>
                     <td></td>
                 </tr>
                 <!-- Part Two -->
-                <tr>
+                <tr class="header-row">
                     <td class="line-description"></td>
                     <td colspan="2">Work in process inventory</td>
                 </tr>
@@ -53,13 +64,13 @@
                     <td><span class="step"  v-if="step >= 4">300</span></td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="step-4  close-bal">
                     <td class="line-description">Close bal</td>
-                    <td>450</td>
+                    <td><span class="step"  v-if="step >=4">450</span></td>
                     <td></td>
                 </tr>
                 <!-- Part Three -->
-                <tr>
+                <tr class="header-row">
                     <td class="line-description"></td>
                     <td colspan="2">Finished goods inventory</td>
                 </tr>
@@ -73,13 +84,13 @@
                     <td></td>
                     <td><span class="step"  v-if="step >= 6">250</span></td>
                 </tr>
-                <tr>
+                <tr class="step-6">
                     <td class="line-description">Close bal</td>
-                    <td>50</td>
+                    <td><span class="step"  v-if="step >=6">50</span></td>
                     <td></td>
                 </tr>
                 <!-- Part Four -->
-                <tr>
+                <tr class="header-row">
                     <td class="line-description"></td>
                     <td colspan="2">Bank</td>
                 </tr>
@@ -98,10 +109,10 @@
                     <td>450</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="step-5  close-bal">
                     <td class="line-description">Close bal</td>
-                    <td>50</td>
                     <td></td>
+                    <td><span class="step"  v-if="step >=5">650</span></td>
                 </tr>
             </table>
         </section> 

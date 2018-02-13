@@ -26,6 +26,7 @@ body {
 
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 .line-description {
     width: 50%;
@@ -36,6 +37,12 @@ td {
     height: 1.5em;
 }
 
+.close-bal {
+    font-weight: bold;
+}
+.header-row {
+    background-color: #ddd
+}
 .table-step-1 .step-1, 
 .table-step-2 .step-2,
 .table-step-3 .step-3,
