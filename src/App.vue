@@ -47,9 +47,9 @@
                         <td></td>
                         <td><span class="step" v-if="step >= 3">150</span></td>
                     </tr>
-                    <tr class="step-highlight  step-3  close-bal">
+                    <tr class="step-highlight  step-7  close-bal">
                         <td class="line-description">Close bal</td>
-                        <td><span class="step"  v-if="step >=3">350</span></td>
+                        <td><span class="step"  v-if="step >=7">350</span></td>
                         <td></td>
                     </tr>
                     <!-- Part Two -->
@@ -69,12 +69,12 @@
                     </tr>
                     <tr class="step-highlight  step-4">
                         <td class="line-description"><span class="step" v-if="step >= 4">[4] 12 units finished</span></td>
-                        <td><span class="step"  v-if="step >= 4">300</span></td>
                         <td></td>
+                        <td><span class="step"  v-if="step >= 4">300</span></td>
                     </tr>
-                    <tr class="step-highlight  step-4  close-bal">
+                    <tr class="step-highlight  step-7  close-bal">
                         <td class="line-description">Close bal</td>
-                        <td><span class="step"  v-if="step >=4">450</span></td>
+                        <td><span class="step"  v-if="step >=7">450</span></td>
                         <td></td>
                     </tr>
                     <!-- Part Three -->
@@ -92,9 +92,9 @@
                         <td></td>
                         <td><span class="step"  v-if="step >= 6">250</span></td>
                     </tr>
-                    <tr class="step-highlight  step-6  close-bal">
+                    <tr class="step-highlight  step-7  close-bal">
                         <td class="line-description">Close bal</td>
-                        <td><span class="step"  v-if="step >=6">50</span></td>
+                        <td><span class="step"  v-if="step >=7">50</span></td>
                         <td></td>
                     </tr>
                     <!-- Part Four -->
@@ -117,10 +117,10 @@
                         <td><span class="step" v-if="step >= 5">450</span></td>
                         <td></td>
                     </tr>
-                    <tr class="step-highlight  step-5  close-bal">
+                    <tr class="step-highlight  step-7  close-bal">
                         <td class="line-description">Close bal</td>
                         <td></td>
-                        <td><span class="step"  v-if="step >=5">650</span></td>
+                        <td><span class="step"  v-if="step >=7">650</span></td>
                     </tr>
                 </table>
             </section> 
